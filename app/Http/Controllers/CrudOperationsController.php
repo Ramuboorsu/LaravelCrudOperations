@@ -35,7 +35,18 @@ class CrudOperationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //store database table in varible
+       $crud = new crudOperations;
+       $username = $request->input('username');
+       $email = $request->input('email');
+       $role = $request->input('role');
+       $pass = $request->input('pass');
+        $crud->username = $username;
+        $crud->email = $email;
+        $crud->role = $role;
+        $crud->password = $pass;
+
+        echo $crud->save();
     }
 
     /**

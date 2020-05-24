@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Opens Register page
+// Route::any('/Register',function(){
+// return view('crudOperations.Register');
+// });
+Route::view('Register','crudOperations.Register');
+
+// //insert data after register successfull
+Route::any("/insert",'CrudOperationsController@store');
